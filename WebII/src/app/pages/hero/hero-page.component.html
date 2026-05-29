@@ -4,32 +4,38 @@
 <div>
     <table>
         <tr>
-            <td>Nombre: </td>
+            <td>Nombre:</td>
             <td>{{name()}}</td>
         </tr>
         <tr>
-            <td>Edad: </td>
+            <td>Edad:</td>
             <td>{{age()}}</td>
         </tr>
         <tr>
-            <td>Método: </td>
+            <td>Método:</td>
             <td>{{getHeroDescription()}}</td>
         </tr>
         <tr>
-            <td>Capitalizado: </td>
+            <td>Capitalizado:</td>
             <td>{{name().toUpperCase()}}</td>
         </tr>
     </table>
 </div>
-<button class="btn btn-primary mx-2">
+<!-- Cada botón llama al método correspondiente mediante el evento click -->
+<div>
+    <button class="btn btn-primary mx-2" (click)="changeName()">
     Cambiar Nombre
-</button>
-<button class="btn btn-primary mx-2">
-    Cambiar Edad
-</button>
-<button class="btn btn-primary mx-2">
-    Reset
-</button>
+    </button>
+    <button class="btn btn-primary mx-2" (click)="changeAge()">
+        Cambiar Edad
+    </button>
+    <!-- <button class="btn btn-primary mx-2" (click)="getHeroDescription()">
+        Mostrar Descripción
+    </button> -->
+    <button class="btn btn-primary mx-2" (click)="reset()">
+        Reset
+    </button>
+</div>
 
 
 <!-- averiguar si se le pone /hero, llamar a este componente, agregar una estética bonita y que sea funcional -->
