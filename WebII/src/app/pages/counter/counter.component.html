@@ -1,19 +1,22 @@
 <h1>
-    Esto es una prueba jijiji
+    Contador: primera página con ts
 </h1>
 <section>
     <article>
         <h2>
             Counter Component Page
         </h2>
-        <button>+1</button>
-        <button>-1</button>
-        <button>Reset</button>
+        <!-- Cuando den click, ejecutar evento y mandar parámetro -->
+        <button (click)="increaseBy(1)">+1</button>
+        <!-- Para restar, pasar parámetro negativo-->
+        <button (click)="increaseBy(-1)">-1</button>
+        <button (click)="reset()">Reset</button>
         <h3>
-            El valor del contador es:
+            El valor del contador es: {{contador}} 
         </h3>
         <h3>
-            El valor del contador con señal es:
+            <!-- Si es de tipo señal, llamar con () -->
+            El valor del contador con señal es: {{contadorSignal()}}
         </h3>
     </article>
 </section>
