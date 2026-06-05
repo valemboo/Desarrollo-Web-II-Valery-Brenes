@@ -27,3 +27,32 @@ export class heroPageComponent{
         this.age.set('28 años')
     }
 }
+
+/*
+Otra solución
+
+@Component({ 
+    templateUrl:'./hero-page.component.html',
+    styleUrl: './hero-page.component.css'
+})
+export class heroPageComponent{
+    name = signal('Harley Quinn');
+    age = signal(28);
+
+    getHeroDescription(){
+    return `${this.name()} - ${this.age()}`;
+    }
+
+    changeHero(){
+        this.name.set('Wonder Woman');
+        this.age.set(30);
+    }
+    changeAge(){
+        this.age.set(60);
+    }
+    reset(){
+        this.name.set('Harley Quinn')
+        this.age.set(28)
+    }
+}
+*/
