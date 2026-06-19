@@ -4,6 +4,7 @@ import { Routes } from '@angular/router';
 import { CounterPageComponent } from './pages/counter/counter.component';
 
 import { heroPageComponent } from './pages/hero/hero-page.component';
+import { AnimeComponent } from './pages/anime/anime-page.component';
 
 export const routes: Routes = [
     //Cada posición del arreglo indica un objeto
@@ -16,5 +17,10 @@ export const routes: Routes = [
     {
         path:'heroes', 
         component: heroPageComponent, //Mostrar la clase hero si el path es
+    },
+
+    {
+        path:'anime', 
+        component: AnimeComponent //Mostrar la clase anime
     }
 ];

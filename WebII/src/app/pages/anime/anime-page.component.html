@@ -1,0 +1,49 @@
+<h2>Anime Component</h2>
+<hr>
+<section class="row">
+    <div class="col-12 col-sm-6">
+        <!-- Agregar {{name()}} para probar señal -->
+        <h3>Agregar</h3>
+
+        <!-- change: Cada vez que cambia la variable name, se asigna su respectivo valor -->
+        <input 
+            type="text" 
+            name="" id="" 
+            placeholder="Nombre" 
+            class="form-control mb-2"
+            [value]="name()"
+            (change)="name.set(txtName.value)"
+            #txtName
+        >
+        <input 
+            type="number" 
+            name="" id="" 
+            placeholder="Poder" 
+            class="form-control mb-2"
+        >
+        <button class="btn btn-primary">Agregar</button>
+    </div>
+    <div class="col-12 col-sm-6">
+        <h3>Listado</h3>
+        <ul>
+            <!-- Directivas = ciclo for -->
+            @for (character of characters(); track character.id) {
+                <!-- si character es mayor a 500 -->
+                @if(character.power > 500){
+                    <li>
+                    <!-- Los datos se extraen desde la lógica del componente -->
+                    <span>{{character.name}}</span>
+                    <!-- Asignar a strong la etiqueta danger siempre y cuando character.power sea mayor a 9000, y text-primary si es menor o igual -->
+                    <strong [class.text-danger]="character.power > 9000" [class.text-primary]="character.power <= 9000">{{character.power}}</strong>
+                </li>
+                }@else { 
+                    <!-- Si no mostrar esto -->
+                    <li>
+                        <strong>¡¡A este personaje le falta odio!!</strong>
+                    </li>
+                }
+                
+            }
+        </ul>
+    </div>
+</section>
