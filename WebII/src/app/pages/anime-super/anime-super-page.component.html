@@ -1,32 +1,11 @@
-<h2>Anime Component</h2>
+<h2>Anime Super Component</h2>
 <hr>
 <section class="row">
     <div class="col-12 col-sm-6">
-        <!-- Agregar {{name()}} {{power()}} para probar señal -->
-        <h3>Agregar {{name()}} {{power()}} </h3>
-
-        <!-- change: Cada vez que cambia la variable name, se asigna su respectivo valor
-            Input: cambia cuando se empieza a escribir -->
-        <input 
-            type="text" 
-            name="" id="" 
-            placeholder="Nombre" 
-            class="form-control mb-2"
-            [value]="name()"
-            (change)="name.set(txtName.value)"
-            (input)="name.set(txtName.value)"
-            #txtName
-        >
-        <input 
-            type="number" 
-            name="" id="" 
-            placeholder="Poder" 
-            class="form-control mb-2"
-            [value]="power()"
-            (input)="power.set(+txtPower.value)"
-            #txtPower
-        >
-        <button class="btn btn-primary" (click)="addCharacter()" >Agregar</button>
+        <!-- INICIA COMPONENTE DE FORMULARIO -->
+        <!-- Inidicar el componente que tiene el contenido del formulario -->
+        <app-character-form/>
+        <!-- FINALIZA EL COMPONENTE DEL FORMULARIO -->
     </div>
     <div class="col-12 col-sm-6">
         <h3>Listado</h3>

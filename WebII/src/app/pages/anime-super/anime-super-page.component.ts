@@ -1,4 +1,5 @@
 import { Component, signal} from "@angular/core";
+import { CharacterFormComponent } from "../../components/character-form/character-form.component";
 
 //Elemento que a nivel de interface cuando se manipula debe cumplir con x requisitos
 interface Character{
@@ -8,9 +9,11 @@ interface Character{
 }
 @Component({
     selector: 'app-anime', //Identificador
-    templateUrl: './anime-page.component.html' //Parte visual
+    templateUrl: './anime-super-page.component.html' //Parte visual
+    ,
+    imports: [CharacterFormComponent] //Componente exportado
 })
-export class AnimeComponent{
+export class AnimeSuperComponent{
     name = signal('');
     power = signal(0);
     characters = signal<Character[]>([

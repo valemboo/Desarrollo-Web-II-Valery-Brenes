@@ -5,6 +5,7 @@ import { CounterPageComponent } from './pages/counter/counter.component';
 
 import { heroPageComponent } from './pages/hero/hero-page.component';
 import { AnimeComponent } from './pages/anime/anime-page.component';
+import { AnimeSuperComponent } from './pages/anime-super/anime-super-page.component';
 
 export const routes: Routes = [
     //Cada posición del arreglo indica un objeto
@@ -22,5 +23,11 @@ export const routes: Routes = [
     {
         path:'anime', 
         component: AnimeComponent //Mostrar la clase anime
+    },
+
+    {
+        path:'animesuper',
+        component: AnimeSuperComponent //Mostrar la clase animesuper
     }
+
 ];
