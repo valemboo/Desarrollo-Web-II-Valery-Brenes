@@ -1,5 +1,6 @@
 import { Component, signal} from "@angular/core";
 import { CharacterFormComponent } from "../../components/character-form/character-form.component";
+import { CharacterListComponent } from "../../components/character-list/character-list.component";
 
 //Elemento que a nivel de interface cuando se manipula debe cumplir con x requisitos
 interface Character{
@@ -11,7 +12,9 @@ interface Character{
     selector: 'app-anime', //Identificador
     templateUrl: './anime-super-page.component.html' //Parte visual
     ,
-    imports: [CharacterFormComponent] //Componente exportado
+
+    // IMPORTAR COMPONENTES QUE SE UTILIZAN!!!
+    imports: [CharacterFormComponent,CharacterListComponent] //Componente exportado: uso de la parte lógica
 })
 export class AnimeSuperComponent{
     name = signal('');
@@ -24,8 +27,9 @@ export class AnimeSuperComponent{
         {id:5, name:'Hiruzen ', power:450},
     ]) //Señal de tipo Character. Cada posición debe cumplir con esos elementos
 
-    addCharacter(){
-        console.log(this.name(),this.power());
+    addCharacter(character: Character){
+        this.characters.update((list)=>[...list,character]);
+        /*console.log(this.name(),this.power());
         //Validaciones: vacios y valor de power
         if(!this.name() || !this.power() || this.power() <= 0){
             return; //no ejecutar nada
@@ -42,5 +46,5 @@ export class AnimeSuperComponent{
     resetFields(){
         this.name.set('');
         this.power.set(0);
-    }
-}
+    }*/
+}}
