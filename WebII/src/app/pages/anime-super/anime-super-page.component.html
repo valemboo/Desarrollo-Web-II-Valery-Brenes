@@ -4,12 +4,19 @@
     <div class="col-12 col-sm-6">
         <!-- INICIA COMPONENTE DE FORMULARIO -->
         <!-- Inidicar el componente que tiene el contenido del formulario -->
-        <app-character-form/>
+        <app-character-form
+            (newCharacter)="addCharacter($event)"
+        />
+         
+        <!-- En el componente del formulario se va a ejecutar un evento -->
         <!-- FINALIZA EL COMPONENTE DEL FORMULARIO -->
     </div>
     <div class="col-12 col-sm-6">
         <!-- EMPIEZA -->
-        <app-character-list/>
+        <app-character-list
+            listName = "Listado de Personajes"
+            [characters]="characters()"
+        />
         <!-- TERMINA -->
     </div>
 </section>
