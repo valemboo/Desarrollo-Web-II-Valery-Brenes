@@ -20,6 +20,8 @@ export class VariosService {
         localStorage.setItem('Personajes',JSON.stringify(this.characters()));
     });
 
+//Envía al LS, mas no lo guarda
+
     addCharacter(character: Character){
         this.characters.update((list)=>[...list,character]);
     }
