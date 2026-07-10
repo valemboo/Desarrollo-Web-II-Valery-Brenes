@@ -5,9 +5,9 @@
         <!-- INICIA COMPONENTE DE FORMULARIO -->
         <!-- Inidicar el componente que tiene el contenido del formulario -->
         <app-character-form
-            (newCharacter)="addCharacter($event)"
+            (newCharacter)="variosService.addCharacter($event)"
         />
-         
+        <!-- Para usar los servicios, hay que utilizarlos a través del nombre del elemento público con el que está instanciado -->
         <!-- En el componente del formulario se va a ejecutar un evento -->
         <!-- FINALIZA EL COMPONENTE DEL FORMULARIO -->
     </div>
@@ -15,7 +15,7 @@
         <!-- EMPIEZA -->
         <app-character-list
             listName = "Listado de Personajes"
-            [characters]="characters()"
+            [characters]="variosService.characters()"
         />
         <!-- TERMINA -->
     </div>

@@ -1,23 +1,34 @@
-import { Component, signal} from "@angular/core";
+import { Component, inject, signal} from "@angular/core";
 import { CharacterFormComponent } from "../../components/character-form/character-form.component";
 import { CharacterListComponent } from "../../components/character-list/character-list.component";
+import { VariosService } from "../../services/varios.services";
 
 //Elemento que a nivel de interface cuando se manipula debe cumplir con x requisitos
-interface Character{
-    id:number;
-    name:string;
-    power:number;
-}
+// interface Character{
+//     id:number;
+//     name:string;
+//     power:number;
+// }
+
 @Component({
     selector: 'app-anime', //Identificador
     templateUrl: './anime-super-page.component.html' //Parte visual
     ,
-
     // IMPORTAR COMPONENTES QUE SE UTILIZAN!!!
     imports: [CharacterFormComponent,CharacterListComponent] //Componente exportado: uso de la parte lógica
 })
+
 export class AnimeSuperComponent{
-    name = signal('');
+
+    // INYECTAR SERVICIO DE FORMA TRADICIONAL (quizá no la más funcional)
+    // constructor(
+    //     public variosService: VariosService
+    // ){}
+
+    //INYECTAR SERVICIO DE FORMA MÁS FUNCIONAL Y MODERNA
+    public variosService = inject(VariosService);
+
+    /*name = signal('');
     power = signal(0);
     characters = signal<Character[]>([
         {id:1, name:'Sasuke ', power:9000},
@@ -46,5 +57,6 @@ export class AnimeSuperComponent{
     resetFields(){
         this.name.set('');
         this.power.set(0);
-    }*/
-}}
+    }
+}*/
+}
